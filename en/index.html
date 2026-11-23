@@ -623,6 +623,9 @@
   .intro-layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform, opacity; }
   .intro-layer[data-k="0"] { transform-origin: 51% 92%; }
   .intro-layer[data-k="1"] { opacity: 0; }
+  .intro-haze { position: absolute; inset: -10%; opacity: 0; pointer-events: none; will-change: opacity, transform;
+    background: radial-gradient(ellipse 70% 55% at 50% 55%, rgba(244, 246, 248, .95), rgba(214, 224, 236, .75) 45%, rgba(170, 190, 215, .35) 75%, rgba(120, 150, 190, 0) 100%); }
+  :is(.intro.static, html:not(.js) .intro) .intro-haze { display: none; }
   .intro-veil { background: linear-gradient(180deg, rgba(20,12,8,0) 48%, rgba(20,12,8,.25) 60%, rgba(20,12,8,.6) 100%); }
   html.js .intro:not(.static) .intro-slogan { top: 52%; bottom: 2.5%; justify-content: center; padding-top: .5rem; padding-bottom: .5rem; }
   html.js .intro:not(.static) .intro-slogan h1 { font-size: clamp(1.45rem, min(5vw, 4.6vh), 3.4rem); margin-bottom: .8rem; }
@@ -840,6 +843,7 @@
     <div class="intro-sticky">
       <picture><source media="(orientation: portrait)" srcset="../img/orbit-p-900.webp 900w, ../img/orbit-p.webp 1400w" sizes="max(100vw, 58.4vh)"><img class="intro-layer" data-k="0" src="../img/orbit-l.webp" srcset="../img/orbit-l-1600.webp 1600w, ../img/orbit-l.webp 2400w" sizes="max(100vw, 160vh)" alt="" fetchpriority="high"></picture>
       <picture><source media="(orientation: portrait)" srcset="../img/rows-p-900.webp 900w, ../img/rows-p.webp 1400w" sizes="max(100vw, 58.4vh)"><img class="intro-layer" data-k="1" src="../img/rows-l.webp" srcset="../img/rows-l-1600.webp 1600w, ../img/rows-l.webp 2400w" sizes="max(100vw, 160vh)" alt=""></picture>
+      <div class="intro-haze" id="haze" aria-hidden="true"></div>
       <div class="intro-veil" id="veil"></div>
       <div class="intro-logo" id="introLogo">
         <svg viewBox="0 0 397 400" role="img" aria-label="Fitosat">
@@ -1167,6 +1171,8 @@
   var logoEl = document.getElementById("introLogo");
   var slogan = document.getElementById("slogan");
   var veil = document.getElementById("veil");
+  var haze = document.getElementById("haze");
+  var sloganParts = Array.prototype.slice.call(document.querySelectorAll("#slogan > *"));
   var hint = document.getElementById("hint");
   var curY = window.scrollY, raf2 = null, lastW = window.innerWidth, lastH = window.innerHeight;
   var handS = 0.6, handTy = 0, satReady = false;
@@ -1195,7 +1201,16 @@
       [1 - ss(0.56, 0.72), 1 + 1.8 * ss(0, 0.7)],
       [ss(0.3, 0.56), 1 + 0.18 * ss(0.3, 1)]
     ];
-    layers.forEach(function (el, i) { el.style.opacity = L[i][0].toFixed(3); el.style.transform = "scale(" + L[i][1].toFixed(4) + ")"; });
+    /* discesa: la Terra si sfoca mentre ci si avvicina, si attraversa la foschia, il vigneto entra a fuoco */
+    var B = [10 * ss(0.36, 0.6), 14 * (1 - ss(0.34, 0.66))];
+    layers.forEach(function (el, i) {
+      el.style.opacity = L[i][0].toFixed(3);
+      el.style.transform = "scale(" + L[i][1].toFixed(4) + ")";
+      el.style.filter = B[i] > 0.15 ? "blur(" + B[i].toFixed(1) + "px)" : "";
+    });
+    var hz = Math.sin(Math.PI * seg(0.38, 0.6));
+    haze.style.opacity = (0.5 * hz).toFixed(3);
+    haze.style.transform = "scale(" + (1 + 0.25 * seg(0.32, 0.64)).toFixed(3) + ")";
     var o = seg(0.8, 0.95);
     var hp = seg(0, 0.3); hp = hp * hp * (3 - 2 * hp);
     logoEl.style.transform = "translate3d(0," + (hp * handTy).toFixed(1) + "px,0) scale(" + (1 + hp * (handS - 1)).toFixed(4) + ")";
@@ -1214,7 +1229,12 @@
     var live = o > 0.6;
     if (live !== lastLive) { lastLive = live; slogan.classList.toggle("live", live); slogan.inert = !live; slogan.style.visibility = o < 0.02 ? "hidden" : ""; }
     else if ((o < 0.02) !== (slogan.style.visibility === "hidden")) slogan.style.visibility = o < 0.02 ? "hidden" : "";
-    slogan.style.transform = "translate3d(0," + ((1 - o) * 30).toFixed(1) + "px,0)";
+    slogan.style.transform = "";
+    sloganParts.forEach(function (el, i) {
+      var p = clamp01((o - i * 0.14) / 0.72); p = 1 - Math.pow(1 - p, 3);
+      el.style.opacity = p.toFixed(3);
+      el.style.transform = "translate3d(0," + ((1 - p) * 26).toFixed(1) + "px,0)";
+    });
     veil.style.opacity = o.toFixed(3);
     hint.style.opacity = (1 - Math.min(1, y / 60)).toFixed(3);
   }
