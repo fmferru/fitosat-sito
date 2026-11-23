@@ -768,7 +768,7 @@
   .vine-why h3 { text-align: center; }
   .vine-points { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .vine-points li { text-wrap: pretty; }
-  .vine-fig { position: relative; max-width: 1000px; margin: 2.5rem auto 0; }
+  .vine-fig { position: relative; max-width: min(1000px, calc((100vh - 8rem) * 1.4)); max-width: min(1000px, calc((100svh - 8rem) * 1.4)); margin: 2.5rem auto 0; }
   .vine-fig img { display: block; width: 100%; height: auto; }
   .vine-fig .vine-uses { position: absolute; inset: 0; margin: 0; padding: 0; display: block; pointer-events: none; }
   .vine-fig .vine-uses li { position: absolute; left: var(--x); top: var(--y); width: 0; height: 0; padding: 0; background: none; border: 0; border-radius: 0; box-shadow: none; }
