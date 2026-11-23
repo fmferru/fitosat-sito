@@ -787,7 +787,7 @@
     .vine-lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(0 0 1px rgba(30,15,20,.85)); }
     .vine-lines line { stroke: #fff; stroke-width: 1.2; vector-effect: non-scaling-stroke; opacity: .9; }
     .vine-fig .vine-uses li { position: static; }
-    .vine-fig .vine-uses li::before { left: calc(var(--x) - 5px); top: calc(var(--y) - 5px); width: 10px; height: 10px; }
+    .vine-fig .vine-uses li::before { display: none; }
     .group .vine-fig .vine-uses h4 { top: 2%; bottom: auto; right: auto; width: 23%; white-space: normal; text-align: center; font-size: .6rem; line-height: 1.15; padding: .32rem .3rem .26rem; border-radius: 9px; }
     .group .vine-fig .vine-uses li:nth-child(1) h4 { left: 26%; }
     .group .vine-fig .vine-uses li:nth-child(2) h4 { left: 1%; }
@@ -796,6 +796,7 @@
     .group .vine-fig .vine-uses li:nth-child(5) h4 { left: 76%; }
   }
   @media (min-width: 761px) {
+    .time .wrap:not(.time-head) { grid-template-columns: minmax(0, 360px) minmax(0, 500px); justify-content: center; column-gap: 3.5rem; }
     .how .layout { grid-template-columns: minmax(0, 500px) minmax(0, 360px); grid-template-areas: "tabs tabs" "field text"; justify-content: center; align-items: center; column-gap: 3.5rem; row-gap: 0; }
     .how .layout > div:first-child { display: contents; }
     .how .layout .tabs { grid-area: tabs; justify-content: center; }
