@@ -17,8 +17,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Fitosat: logo in the starry sky above the Earth seen from space">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="../img/orbit-p.webp" imagesrcset="../img/orbit-p-900.webp 900w, ../img/orbit-p.webp 1400w" imagesizes="max(100vw, 58.4vh)" media="(orientation: portrait)">
-<link rel="preload" as="image" href="../img/orbit-l.webp" imagesrcset="../img/orbit-l-1600.webp 1600w, ../img/orbit-l.webp 2400w" imagesizes="max(100vw, 160vh)" media="(orientation: landscape)">
+<link rel="preload" as="image" href="../img/orbit-p.webp" imagesrcset="../img/orbit-p-900.webp 900w, ../img/orbit-p.webp 1750w" imagesizes="max(100vw, 58.4vh)" media="(orientation: portrait)">
+<link rel="preload" as="image" href="../img/orbit-l.webp" imagesrcset="../img/orbit-l-1600.webp 1600w, ../img/orbit-l.webp 3200w" imagesizes="max(100vw, 160vh)" media="(orientation: landscape)">
 <link rel="preload" as="font" type="font/woff2" href="../fonts/josefin-700.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="../fonts/questrial-400.woff2" crossorigin>
 <link rel="canonical" href="https://fitosat.it/en/">
@@ -822,7 +822,7 @@
 <main id="top">
   <section class="intro" id="intro">
     <div class="intro-sticky">
-      <picture><source media="(orientation: portrait)" srcset="../img/orbit-p-900.webp 900w, ../img/orbit-p.webp 1400w" sizes="max(100vw, 58.4vh)"><img class="intro-layer" data-k="0" src="../img/orbit-l.webp" srcset="../img/orbit-l-1600.webp 1600w, ../img/orbit-l.webp 2400w" sizes="max(100vw, 160vh)" alt="" fetchpriority="high"></picture>
+      <picture><source media="(orientation: portrait)" srcset="../img/orbit-p-900.webp 900w, ../img/orbit-p.webp 1750w" sizes="max(100vw, 58.4vh)"><img class="intro-layer" data-k="0" src="../img/orbit-l.webp" srcset="../img/orbit-l-1600.webp 1600w, ../img/orbit-l.webp 3200w" sizes="max(100vw, 160vh)" alt="" fetchpriority="high"></picture>
       <picture><source media="(orientation: portrait)" srcset="../img/rows-p-900.webp 900w, ../img/rows-p.webp 1400w" sizes="max(100vw, 58.4vh)"><img class="intro-layer" data-k="1" src="../img/rows-l.webp" srcset="../img/rows-l-1600.webp 1600w, ../img/rows-l.webp 2400w" sizes="max(100vw, 160vh)" alt=""></picture>
       <div class="intro-haze" id="haze" aria-hidden="true"></div>
       <div class="intro-veil" id="veil"></div>
@@ -1179,20 +1179,20 @@
     function ss(a, b) { var t = seg(a, b); return t * t * (3 - 2 * t); }
     /* zoom sempre in avanti; ogni immagine resta piena finché quella sopra non la copre del tutto */
     var L = [
-      [1 - ss(0.56, 0.72), 1 + 1.8 * ss(0, 0.7)],
-      [ss(0.3, 0.56), 1 + 0.18 * ss(0.3, 1)]
+      [1 - ss(0.44, 0.56), 1 + 1.8 * ss(0, 0.56)],
+      [ss(0.26, 0.44), 1 + 0.18 * ss(0.26, 1)]
     ];
     /* discesa: la Terra si sfoca mentre ci si avvicina, si attraversa la foschia, il vigneto entra a fuoco */
-    var B = [10 * ss(0.36, 0.6), 14 * (1 - ss(0.34, 0.66))];
+    var B = [10 * ss(0.3, 0.46), 14 * (1 - ss(0.28, 0.5))];
     layers.forEach(function (el, i) {
       el.style.opacity = L[i][0].toFixed(3);
       el.style.transform = "scale(" + L[i][1].toFixed(4) + ")";
       el.style.filter = B[i] > 0.15 ? "blur(" + B[i].toFixed(1) + "px)" : "";
     });
-    var hz = Math.sin(Math.PI * seg(0.38, 0.6));
+    var hz = Math.sin(Math.PI * seg(0.31, 0.47));
     haze.style.opacity = (0.5 * hz).toFixed(3);
-    haze.style.transform = "scale(" + (1 + 0.25 * seg(0.32, 0.64)).toFixed(3) + ")";
-    var o = seg(0.8, 0.95);
+    haze.style.transform = "scale(" + (1 + 0.25 * seg(0.28, 0.5)).toFixed(3) + ")";
+    var o = seg(0.62, 0.8);
     var hp = seg(0, 0.3); hp = hp * hp * (3 - 2 * hp);
     logoEl.style.transform = "translate3d(0," + (hp * handTy).toFixed(1) + "px,0) scale(" + (1 + hp * (handS - 1)).toFixed(4) + ")";
     var so = (1 - seg(0, 0.2)).toFixed(3);
