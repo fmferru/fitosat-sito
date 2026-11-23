@@ -177,7 +177,7 @@
     .topnav { left: 4.1rem; }
   }
   /* Intro */
-  section.intro { height: 260vh; position: relative; padding: 0; }
+  section.intro { height: 240vh; position: relative; padding: 0; }
   .intro-sticky { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .intro-sticky { background: #1c1416; }
   .intro-sticky::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 55% at 50% 45%, rgba(30,20,24,.15), rgba(30,20,24,.65) 100%); }
@@ -1187,28 +1187,30 @@
     var z = clamp01(y / (vh * 1.4));
     function seg(a, b) { return clamp01((z - a) / (b - a)); }
     function ss(a, b) { var t = seg(a, b); return t * t * (3 - 2 * t); }
-    /* zoom sempre in avanti; ogni immagine resta piena finché quella sopra non la copre del tutto */
+    function ee(a, b) { var t = seg(a, b); return 0.5 * t + 0.5 * t * t * (3 - 2 * t); }
+    /* zoom a velocità costante (esponenziale): nessuna partenza lenta né scatto finale */
+    var zA = Math.pow(2.8, seg(0, 0.58)), zB = Math.pow(1.18, seg(0.12, 1));
     var L = [
-      [1 - ss(0.44, 0.56), 1 + 1.8 * ss(0, 0.56)],
-      [ss(0.26, 0.44), 1 + 0.18 * ss(0.26, 1)]
+      [1 - ss(0.3, 0.6), zA],
+      [ee(0.06, 0.48), zB]
     ];
     /* discesa: la Terra si sfoca mentre ci si avvicina, si attraversa la foschia, il vigneto entra a fuoco */
-    var B = [10 * ss(0.3, 0.46), 14 * (1 - ss(0.28, 0.5))];
+    var B = [10 * ee(0.08, 0.5), 14 * (1 - ee(0.1, 0.56))];
     layers.forEach(function (el, i) {
       el.style.opacity = L[i][0].toFixed(3);
       el.style.transform = "scale(" + L[i][1].toFixed(4) + ")";
       el.style.filter = B[i] > 0.15 ? "blur(" + B[i].toFixed(1) + "px)" : "";
     });
-    var hz = Math.sin(Math.PI * seg(0.31, 0.47));
+    var hz = Math.sin(Math.PI * seg(0.08, 0.54));
     haze.style.opacity = (0.5 * hz).toFixed(3);
-    haze.style.transform = "scale(" + (1 + 0.25 * seg(0.28, 0.5)).toFixed(3) + ")";
-    var o = seg(0.62, 0.8);
-    var hp = seg(0, 0.3); hp = hp * hp * (3 - 2 * hp);
+    haze.style.transform = "scale(" + (1 + 0.25 * seg(0.08, 0.54)).toFixed(3) + ")";
+    var o = seg(0.5, 0.72);
+    var hp = seg(0, 0.26); hp = hp * hp * (3 - 2 * hp);
     logoEl.style.transform = "translate3d(0," + (hp * handTy).toFixed(1) + "px,0) scale(" + (1 + hp * (handS - 1)).toFixed(4) + ")";
     var so = (1 - seg(0, 0.2)).toFixed(3);
     symbolEls.forEach(function (e) { e.style.opacity = so; });
     if (y > 2) logoEl.classList.remove("sat-on"); else if (satReady) logoEl.classList.add("sat-on");
-    var handed = z >= 0.3;
+    var handed = z >= 0.26;
     if (handed !== lastHanded) {
       lastHanded = handed;
       brand.classList.toggle("on", handed);
@@ -1229,12 +1231,13 @@
     veil.style.opacity = o.toFixed(3);
     hint.style.opacity = (1 - Math.min(1, y / 60)).toFixed(3);
   }
-  function tick() {
-    var target = window.scrollY;
-    curY += (target - curY) * 0.22;
+  var lastT = 0;
+  function tick(t) {
+    var target = window.scrollY, dt = lastT ? Math.min(64, t - lastT) : 16; lastT = t;
+    curY += (target - curY) * (1 - Math.exp(-dt / 90));
     if (Math.abs(target - curY) < 0.5) curY = target;
     if (curY < window.innerHeight * 2 || target < window.innerHeight * 2) render(curY);
-    raf2 = curY === target ? null : requestAnimationFrame(tick);
+    if (curY === target) { raf2 = null; lastT = 0; } else raf2 = requestAnimationFrame(tick);
   }
   function onScroll() { if (!raf2) raf2 = requestAnimationFrame(tick); }
   if (reduce) {
