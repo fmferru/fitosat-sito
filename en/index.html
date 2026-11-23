@@ -376,17 +376,11 @@
   /* Vite */
   .vine { background: var(--surface); border-top: 1px solid var(--line); }
   .vine .prose { text-align: center; margin-left: auto; margin-right: auto; }
-  .vine-why { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 2rem; align-items: start; }
   .vine-why h3 { font-size: 1.45rem; margin-bottom: .6rem; }
   .vine-why p { color: var(--muted); line-height: 1.7; }
-  .vine-uses { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; counter-reset: v; }
-  .vine-uses li { position: relative; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
-  .vine-uses li::before { counter-increment: v; content: ""; position: absolute; left: 1.1rem; top: 1.15rem; width: 20px; height: 13px;
-    background: linear-gradient(135deg, #7a3e5c, #6f4f69); border-radius: 2px 12px 2px 12px; }
+  .vine-uses { list-style: none; }
   .vine-uses h4 { margin: 0 0 .2rem; font-family: var(--display); font-weight: 700; padding-top: .1em; }
-  .vine-uses p { margin: 0; color: var(--muted); }
   .vine .stats { margin-top: 2.5rem; }
-  @media (max-width: 860px) { .vine-why { grid-template-columns: 1fr; gap: 1.5rem; } }
   /* Rifiniture */
   .group h2, .intro-slogan h1 { text-wrap: balance; }
   .prose, .stats p, .vine-why p, .flow p { text-wrap: pretty; }
@@ -442,20 +436,13 @@
   .vine-points { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
   .vine-points li { position: relative; padding-left: 1.4rem; color: var(--muted); line-height: 1.5; }
   .vine-points li::before { content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 1.5px; background: var(--brand); }
-  .vine-uses { grid-template-columns: 1fr 1fr; }
-  .vine-uses li { padding: .85rem 1rem .85rem 1rem; }
-  .vine-uses li::before { display: none; }
-  .vine-uses li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .what .aside { text-align: center; margin-left: auto; margin-right: auto; font-family: var(--display); font-weight: 700; font-size: 1.2rem; }
-  .vine-uses h4 { font-size: 1rem; }
-  .vine-uses p { font-size: .9rem; }
   #cropText { min-height: 3.2em; }
   .intro-slogan .lead { max-width: 46ch; }
   @media (max-width: 860px) {
     .specs { grid-template-columns: 1fr; }
     .specs > div { border-left: 0; border-top: 1px solid var(--line); }
     .specs > div:first-child { border-top: 0; }
-    .vine-uses { grid-template-columns: 1fr; }
   }
   /* Pilot */
   .pilot { background: #4e2a38; color: #fff; }
@@ -510,7 +497,6 @@
     .vine-why { text-align: center; }
     .vine-points li { padding-left: 0; }
     .vine-points li::before { position: static; display: block; margin: 0 auto .45rem; width: 16px; }
-    .vine-uses li { text-align: center; }
     .pilotbox { text-align: center; justify-items: center; }
     .pilotbox p { margin-left: auto; margin-right: auto; }
     .pilotbox .badge { border-left: 0; padding-left: 0; padding-top: .75rem; border-top: 2px solid rgba(255,255,255,.25); display: inline-block; }
@@ -612,11 +598,6 @@
     .group .stats .num small { display: block; font-size: .75rem; margin: 0 0 .1rem; }
     .group .stats p { font-size: .86rem; line-height: 1.4; margin: .35rem 0 .45rem; }
     .group .stats cite { font-size: .75rem; line-height: 1.35; }
-    .vine-uses { grid-template-columns: 1fr 1fr; gap: .55rem; }
-    .vine-uses li { padding: .8rem .7rem; }
-    .vine-uses h4 { font-size: .95rem; }
-    .vine-uses p { font-size: .85rem; }
-    .vine-uses li:last-child:nth-child(odd) { grid-column: 1 / -1; }
     .pilot-steps { max-width: 22rem; margin-left: auto; margin-right: auto; }
   }
   /* Prima schermata: zoom dallo spazio */
