@@ -2,44 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fitosat.it/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/"/>
   </url>
   <url>
     <loc>https://fitosat.it/en/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/es/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/fr/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/pt/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/"/>
   </url>
   <url>
     <loc>https://fitosat.it/privacy.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/privacy.html"/>
   </url>
   <url>
     <loc>https://fitosat.it/en/privacy.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/es/privacy.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/fr/privacy.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/pt/privacy.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/privacy.html"/>
   </url>
   <url>
     <loc>https://fitosat.it/note-legali.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/note-legali.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/note-legali.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/note-legali.html"/>
   </url>
   <url>
     <loc>https://fitosat.it/en/note-legali.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/note-legali.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/note-legali.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/es/note-legali.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/note-legali.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/fr/note-legali.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/note-legali.html"/>
+  </url>
+  <url>
+    <loc>https://fitosat.it/pt/note-legali.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://fitosat.it/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fitosat.it/en/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://fitosat.it/es/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fitosat.it/fr/note-legali.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fitosat.it/pt/note-legali.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://fitosat.it/note-legali.html"/>
   </url>
 </urlset>
