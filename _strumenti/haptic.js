@@ -1,0 +1,11 @@
+const { chromium, devices } = require('playwright');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({...devices['Pixel 7']});const p=await ctx.newPage();
+await p.addInitScript(()=>{window.__v=[];navigator.vibrate=(x)=>{window.__v.push(x);return true;}});
+const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file:///home/claude/staging/index.html');await p.waitForTimeout(500);
+await p.tap('#menuBtn');await p.waitForTimeout(200);
+await p.evaluate(()=>document.querySelector('.crops').scrollIntoView());await p.waitForTimeout(300);
+await p.tap('.crops button:nth-child(2)');
+await p.evaluate(()=>document.querySelector('section.problem p').scrollIntoView());await p.tap('section.problem p');
+const v=await p.evaluate(()=>window.__v);console.log('vibrations',JSON.stringify(v),'errors',errs);
+console.log(v.length===2&&errs.length===0?'PASS':'FAIL');await b.close();})();
